@@ -54,6 +54,7 @@ probe-rs chip list | select-string stm32f411ce
 Usefull tools:
 ```powershell
 rustup component add rustfmt
+rustup component add clippy
 rustup component add llvm-tools
 cargo install cargo-binutils
 ```
