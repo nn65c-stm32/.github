@@ -41,22 +41,27 @@ Target name is in `arch-vendor-os-abi` format. STM32F411CE is `thumbv7em-none-ea
 Chip information [probe-rs targets](https://probe.rs/targets/?manufacturer=STMicroelectronics&family=SHOW_ALL_FAMILIES).
 
 Add target:
-```powershell
+```
 rustup update
 rustup target list
 rustup target list --installed
 rustup target add thumbv7em-none-eabihf
 rustup show
+# rustup uninstall <target, toolchain...>
 
 probe-rs chip list | select-string stm32f411ce
 ```
 
 Usefull tools:
-```powershell
+```
 rustup component add rustfmt
 rustup component add clippy
 rustup component add llvm-tools
 cargo install cargo-binutils
+
+cargo install --list
+cargo update
+# cargo uninstall <package>
 ```
 
 ### Troubleshooting:
@@ -74,7 +79,7 @@ When trying to flash and run with `cargo run`:
 - Release **BOOT0**
 
 #### Automatic reset on flash
-If using the WeAct Minidebugger, connect NRST to R on STM32. The `--connect-under-reset` must be added. This may be done in `.cargo\config.toml`. Sample with `STM32F411CEUx`:
+If using the WeAct Minidebugger, connect NRST to R/NR/NRST on STM32. The `--connect-under-reset` must be added. This may be done in `.cargo\config.toml`. Sample with `STM32F411CEUx`:
 ```toml
 [build]
 target = "thumbv7em-none-eabihf"
