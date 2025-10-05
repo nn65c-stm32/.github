@@ -46,6 +46,10 @@ rustup update
 rustup target list
 rustup target list --installed
 rustup target add thumbv7em-none-eabihf
+rustup target add thumbv6m-none-eabi
+rustup target add thumbv7em-none-eabi
+rustup target add thumbv8m.main-none-eabihf
+rustup target add thumbv7m-none-eabi
 rustup show
 # rustup uninstall <target, toolchain...>
 
@@ -60,7 +64,7 @@ rustup component add llvm-tools
 cargo install cargo-binutils
 
 cargo install --list
-cargo update
+# cargo update
 # cargo uninstall <package>
 ```
 
